@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use App\Exceptions\ApiException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -36,6 +37,9 @@ class Handler extends ExceptionHandler
     {
         $this->reportable(function (Throwable $e) {
             //
+        });
+        $this->renderable(function (ApiException $e, $request) {
+            return response()->view('errors.api', $e->context());
         });
     }
 }

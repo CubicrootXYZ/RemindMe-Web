@@ -20,4 +20,4 @@
 
 </head>
 
-<body class="antialiased bg-gray-100 dark:bg-gray-900 text-gray-200 p-3">
+<body class="antialiased bg-gray-100 text-gray-300 p-3">

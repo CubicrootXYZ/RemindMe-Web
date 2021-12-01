@@ -22,10 +22,10 @@ class RemindMeBasicAuth
             return abort(401, 'Unauthenticated', ['WWW-Authenticate' => 'Basic']);
         }
 
-        $request->attributes->add(['basicAuth' => [
+        $request->attributes->add([
             'username' => $username,
             'password' => $password
-        ]]);
+        ]);
 
         return $next($request);
     }

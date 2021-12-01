@@ -14,9 +14,14 @@
 ])
 
 @include('elements.visual.text-centered', [
-    'heading' => 'Why data we collect',
+    'heading' => 'Why we collect data',
     'text' => '<p>Meta data collections is required to keep our services running smoothly. Abuse and attacks can be mitigated and prevented by this data. (Art. 6 (1f) DSGVO)</p>
     <p>Additional content data is required to be able to provide some of the features. (Art. 6 (1a/b) DSGVO)</p>'
+])
+
+@include('elements.visual.text-centered', [
+    'heading' => 'Your rights',
+    'text' => 'According to law (DSGVO) you have the right to know what data we store and process. You have the right to request correction and deletion of your personal data. You also have the right to withdra any consents given to us at any time for the future. You further can complain to the regulatory authorities if you want to.'
 ])
 
 @include('elements.footer')

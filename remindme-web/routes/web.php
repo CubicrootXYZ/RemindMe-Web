@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LegalController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware('auth.basic.remindme');
-
+// Legal stuff
 Route::get('/inprint', [LegalController::class, 'inprint']);
 Route::get('/privacy-policy', [LegalController::class, 'privacyPolicy']);
+
+// Overviews
+Route::get('/', [MainController::class, 'overview'])->middleware('auth.basic.remindme');
