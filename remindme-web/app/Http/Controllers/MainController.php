@@ -16,7 +16,23 @@ class MainController extends Controller
     public function overview(Request $request)
     {
         $api = new RemindMeApi($request->get('username'), $request->get('password'));
+        $data = [
+            'usersTotal' => 0,
+            'usersAdmin' => 0,
+            'channelsTotal' => 0,
+        ];
 
-        return view('main.overview')->with(['data' => json_encode($api->UserGet())]);
+        $users = $api->UserGet();
+        $data['usersTotal'] = count($users['data']);
+        foreach ($users['data'] as $user) {
+            foreach ($user['channels'] as $channel) {
+                if ($channel['role'] == RemindMeApi::ROLE_ADMIN) {
+                    $data['usersAdmin'] += 1;
+                }
+                $data['channelsTotal'] += 1;
+            }
+        }
+
+        return view('main.overview')->with($data);
     }
 }

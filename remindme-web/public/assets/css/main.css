@@ -35,3 +35,38 @@
 body {
     font-family: 'Evolventa', sans-serif;
 }
+
+.round {
+    border-radius: 100%;
+}
+
+.border-white {
+    border-color: white;
+    border-width: 0.4rem;
+}
+
+.half-page {
+    max-height: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* TEXT */
+.bold {
+    font-weight: bold;
+}
+
+.badge {
+    font-size: 1em;
+}
+
+/* FLEXBOX */
+.align-items-center {
+    align-items: center;
+}

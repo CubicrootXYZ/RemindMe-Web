@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Log;
 
 class RemindMeApi
 {
+    const ROLE_ADMIN = 'admin';
+    const ROLE_USER = 'user';
+
     private $username = '';
     private $password = '';
     private $baseUrl = '';
@@ -21,6 +24,13 @@ class RemindMeApi
     public function UserGet(): array
     {
         $url = $this->baseUrl . '/user';
+        $data = $this->sendRequest(CURLOPT_HTTPGET, $url);
+        return $data;
+    }
+
+    public function ChannelGet(): array
+    {
+        $url = $this->baseUrl . '/channel';
         $data = $this->sendRequest(CURLOPT_HTTPGET, $url);
         return $data;
     }
