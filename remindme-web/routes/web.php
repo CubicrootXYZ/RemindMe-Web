@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LegalController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,3 +22,7 @@ Route::get('/privacy-policy', [LegalController::class, 'privacyPolicy']);
 
 // Overviews
 Route::get('/', [MainController::class, 'overview'])->middleware('auth.basic.remindme');
+
+// User
+Route::get('/user', [UserController::class, 'list'])->middleware('auth.basic.remindme');
+Route::post('/user/{id}', [UserController::class, 'changeUser'])->middleware('auth.basic.remindme');

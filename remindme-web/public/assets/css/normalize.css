@@ -66,7 +66,7 @@
         }
 
         .bg-gray-400 {
-            background-color: #b8c9e9;
+            background-color: #d5ddec;;
         }
 
         .bg-blue {
@@ -257,43 +257,43 @@
 
         .text-gray-200 {
             --text-opacity: 1;
-            color: #bfc4c9;
+            color: #bfc4c9 !important;
             color: rgba(191, 196, 201, var(--text-opacity))
         }
 
         .text-gray-300 {
             --text-opacity: 1;
-            color: #a1a8b3;
+            color: #a1a8b3 !important;
             color: rgba(161, 168, 179, var(--text-opacity))
         }
 
         .text-gray-400 {
             --text-opacity: 1;
-            color: #767c85;
+            color: #767c85 !important;
             color: rgba(118, 124, 133, var(--text-opacity))
         }
 
         .text-gray-500 {
             --text-opacity: 1;
-            color: #5d6269;
+            color: #5d6269 !important;
             color: rgba(93, 98, 105, var(--text-opacity))
         }
 
         .text-gray-600 {
             --text-opacity: 1;
-            color: #5b6778;
+            color: #5b6778 !important;
             color: rgba(91, 103, 120, var(--text-opacity))
         }
 
         .text-gray-700 {
             --text-opacity: 1;
-            color: #3a4352;
+            color: #3a4352 !important;
             color: rgba(58, 67, 82, var(--text-opacity))
         }
 
         .text-gray-900 {
             --text-opacity: 1;
-            color: #0b0d12;
+            color: #0b0d12 !important;
             color: rgba(11, 12, 18, var(--text-opacity))
         }
 
@@ -525,43 +525,43 @@
 
             .text-gray-900 {
                 --text-opacity: 1;
-                color: #edf2f7;
+                color: #edf2f7 !important;
                 color: rgba(237, 242, 247, var(--text-opacity))
             }
 
             .text-gray-700 {
                 --text-opacity: 1;
-                color: #e2e8f0;
+                color: #e2e8f0 !important;
                 color: rgba(226, 232, 240, var(--text-opacity))
             }
 
             .text-gray-600 {
                 --text-opacity: 1;
-                color: #cbd5e0;
+                color: #cbd5e0 !important;
                 color: rgba(203, 213, 224, var(--text-opacity))
             }
 
             .text-gray-500 {
                 --text-opacity: 1;
-                color: #a0aec0;
+                color: #a0aec0 !important;
                 color: rgba(160, 174, 192, var(--text-opacity))
             }
 
             .text-gray-400 {
                 --text-opacity: 1;
-                color: #718096;
+                color: #718096 !important;
                 color: rgba(113, 128, 150, var(--text-opacity))
             }
 
             .text-gray-300 {
                 --text-opacity: 1;
-                color: #4a5568;
+                color: #4a5568 !important;
                 color: rgba(74, 85, 104, var(--text-opacity))
             }
 
             .text-gray-200 {
                 --text-opacity: 1;
-                color: #252d3d;
+                color: #252d3d !important;
                 color: rgba(37, 45, 61, var(--text-opacity))
             }
         }

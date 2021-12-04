@@ -2,23 +2,23 @@
 @font-face {
     font-family: "Evolventa";
     src: url("/assets/fonts/Evolventa-Regular.otf") format("otf"),
-         url("/assets/fonts/Evolventa-Regular.ttf") format("ttf"),
-         url("/assets/fonts/Evolventa-Regular.woff") format("woff");
+        url("/assets/fonts/Evolventa-Regular.ttf") format("ttf"),
+        url("/assets/fonts/Evolventa-Regular.woff") format("woff");
 }
 
 @font-face {
     font-family: "Evolventa";
     src: url("/assets/fonts/Evolventa-Bold.otf") format("otf"),
-         url("/assets/fonts/Evolventa-Bold.ttf") format("ttf"),
-         url("/assets/fonts/Evolventa-Bold.woff") format("woff");
+        url("/assets/fonts/Evolventa-Bold.ttf") format("ttf"),
+        url("/assets/fonts/Evolventa-Bold.woff") format("woff");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "Evolventa";
     src: url("/assets/fonts/Evolventa-BoldOblique.otf") format("otf"),
-         url("/assets/fonts/Evolventa-BoldOblique.ttf") format("ttf"),
-         url("/assets/fonts/Evolventa-BoldOblique.woff") format("woff");
+        url("/assets/fonts/Evolventa-BoldOblique.ttf") format("ttf"),
+        url("/assets/fonts/Evolventa-BoldOblique.woff") format("woff");
     font-weight: bold;
     font-style: italic;
 }
@@ -26,14 +26,15 @@
 @font-face {
     font-family: "Evolventa";
     src: url("/assets/fonts/Evolventa-Oblique.otf") format("otf"),
-         url("/assets/fonts/Evolventa-Oblique.ttf") format("ttf"),
-         url("/assets/fonts/Evolventa-Oblique.woff") format("woff");
+        url("/assets/fonts/Evolventa-Oblique.ttf") format("ttf"),
+        url("/assets/fonts/Evolventa-Oblique.woff") format("woff");
     font-style: italic;
 }
 
 /* SYSTEM WIDE */
 body {
     font-family: 'Evolventa', sans-serif;
+    margin-top: 5rem;
 }
 
 .round {
@@ -57,6 +58,22 @@ body {
     margin-right: auto;
 }
 
+.rounded {
+    border-radius: .5rem;
+}
+
+/* NAVIGATION */
+.navbar {
+    background-color: #064ba9;
+    border-bottom: 4px solid white;
+    color: white;
+}
+
+.navbar .navbar-brand {
+    color: white;
+    font-weight: bold;
+}
+
 /* TEXT */
 .bold {
     font-weight: bold;
@@ -66,7 +83,36 @@ body {
     font-size: 1em;
 }
 
+.text-big {
+    font-size: 1.2rem;
+}
+
+.text-green {
+    color: rgb(31, 187, 0);
+}
+
+.text-red {
+    color: #cc0000;
+}
+
 /* FLEXBOX */
 .align-items-center {
     align-items: center;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+/* CARD */
+.card .card-header {
+    border-bottom: 0;
+    background-color: unset;
+    padding: 0rem 1em;
+    margin-top: 0.75rem;
+}
+
+.card {
+    border: none;
+    border-radius: 0.5rem;
 }

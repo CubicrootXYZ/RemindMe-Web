@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use App\Exceptions\ApiException;
+use App\Exceptions\InputValidationException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -40,6 +41,9 @@ class Handler extends ExceptionHandler
         });
         $this->renderable(function (ApiException $e, $request) {
             return response()->view('errors.api', $e->context());
+        });
+        $this->renderable(function (InputValidationException $e, $request) {
+            return response()->view('errors.input-validation', $e->context());
         });
     }
 }

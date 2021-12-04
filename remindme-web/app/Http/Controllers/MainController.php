@@ -20,6 +20,7 @@ class MainController extends Controller
             'usersTotal' => 0,
             'usersAdmin' => 0,
             'channelsTotal' => 0,
+            'dailyReminderEnabled' => 0,
         ];
 
         $users = $api->UserGet();
@@ -29,6 +30,11 @@ class MainController extends Controller
                 if ($channel['role'] == RemindMeApi::ROLE_ADMIN) {
                     $data['usersAdmin'] += 1;
                 }
+
+                if ($channel['daily_reminder']) {
+                    $data['dailyReminderEnabled'] += 1;
+                }
+
                 $data['channelsTotal'] += 1;
             }
         }
