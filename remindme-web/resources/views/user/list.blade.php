@@ -3,6 +3,29 @@
 
 @include('elements.visual.title', ['title' => 'Users', 'icon' => 'fas fa-users'])
 
+<script>
+    function setAction() {
+        var action_src = "/user/" + document.getElementsByName("user_id")[0].value;
+        var your_form = document.getElementById('gen_block');
+        your_form.action = action_src;
+    }
+
+</script>
+
+<div class="container-fluid row">
+    <form method="POST" id="gen_block" onsubmit="setAction()">
+        @csrf
+        <input type="hidden" id="blocked" name="blocked" value="true">
+        <div class="input-group mb-3 col-md-6">
+            <input type="text" id="user_id" name="user_id" class="form-control" placeholder="User ID">
+        </div>
+        <div class="input-group mb-3 col-md-6">
+            <input type="text" id="block_reason" name="block_reason" class="form-control" placeholder="Block reason">
+            <button class="btn btn-danger" type="submit"><i class="far fa-times-circle"></i> Block</button>
+        </div>
+    </form>
+</div>
+
 <div class="container-fluid mt-4">
 
 
