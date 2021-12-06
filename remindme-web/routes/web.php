@@ -3,6 +3,7 @@
 use App\Http\Controllers\LegalController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ChannelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,6 @@ Route::get('/', [MainController::class, 'overview'])->middleware('auth.basic.rem
 // User
 Route::get('/user', [UserController::class, 'list'])->middleware('auth.basic.remindme');
 Route::post('/user/{id}', [UserController::class, 'changeUser'])->middleware('auth.basic.remindme');
+
+// Channels
+Route::get('/channel', [ChannelController::class, 'list'])->middleware('auth.basic.remindme');
