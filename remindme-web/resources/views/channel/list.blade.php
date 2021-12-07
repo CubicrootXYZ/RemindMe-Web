@@ -1,7 +1,9 @@
 @include('elements.header', ['title' => 'Users'])
 @include('elements.menu')
 
-@include('elements.visual.title', ['title' => 'Users', 'icon' => 'fas fa-users'])
+@include('elements.visual.title', ['title' => 'Channels', 'icon' => 'fas fa-comments'])
+
+
 
 <script>
     function setAction() {
@@ -34,7 +36,34 @@
             </h2>
             <div id="collapse{{ $i }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $i }}" data-bs-parent="#accordionExample">
                 <div class="accordion-body bg-gray-400 text-gray-500">
-                    tbd
+                    <p>
+                        <b>Created: </b> {{ $channel['created'] }}
+                    </p>
+                    <p>
+                        <b>Role: </b> {{ $channel['role'] }}
+                    </p>
+                    <p>
+                        <b>Daily Reminder: </b> @if($channel['daily_reminder'] != "") <i class="fas fa-check text-green"></i> @else <i class="fas fa-times text-red"></i> @endif
+                    </p>
+                    <p>
+                        <b>Timezone: </b> {{ $channel['timezone'] }}
+                    </p>
+
+                    <form method="POST" action="/calendar/{{ urlencode($channel['id']) }}/patch">
+                        @csrf
+                        <div class="input-group mb-3">
+                            <button class="btn btn-warning" type="submit"><i class="fas fa-sync"></i> (Re)Set calendar token</button>
+                        </div>
+                    </form>
+
+                    <form method="POST" action="/channel/{{ urlencode($channel['id']) }}/delete">
+                        @csrf
+                        <div class="input-group mb-3">
+                            <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i> Delete</button>
+                        </div>
+                    </form>
+
+
 
                 </div>
             </div>

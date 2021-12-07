@@ -42,6 +42,28 @@ class RemindMeApi
         return $data;
     }
 
+    public function ChannelIDDelete(int $channelID): array
+    {
+        $url = $this->baseUrl . '/channel/' . $channelID;
+        $data = $this->sendRequest(-1, $url);
+        return $data;
+    }
+
+    public function CalendarGet(): array
+    {
+        $url = $this->baseUrl . '/calendar';
+        $data = $this->sendRequest(CURLOPT_HTTPGET, $url);
+        return $data;
+    }
+
+    public function CalendarPatch(int $calendarID): array
+    {
+        $url = $this->baseUrl . '/calendar/' . $calendarID;
+        $data = $this->sendRequest(-2, $url);
+        return $data;
+    }
+
+    // @param int $method a CURLOPT method or -1 for DELETE, -2 for PATCH
     private function sendRequest(int $method, string $url, array $data = []): array
     {
         Log::debug('Making request to: ' . $url);
@@ -51,6 +73,10 @@ class RemindMeApi
         curl_setopt($curl, CURLOPT_URL, $url);
         if ($method == CURLOPT_PUT) {
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PUT');
+        } else if ($method == -1) {
+            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
+        } else if ($method == -2) {
+            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'PATCH');
         } else {
             curl_setopt($curl, $method, true);
         }

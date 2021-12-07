@@ -20,4 +20,17 @@ class ChannelController extends Controller
 
         return view('channel.list')->with($channels);
     }
+
+    /**
+     * Delete channel
+     *
+     * @return \Illuminate\View\View
+     */
+    public function delete(Request $request, int $channelID)
+    {
+        $api = new RemindMeApi($request->get('username'), $request->get('password'));
+        $api->ChannelIDDelete($channelID);
+
+        return back();
+    }
 }

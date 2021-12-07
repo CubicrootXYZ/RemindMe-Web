@@ -25,10 +25,7 @@
                             <a class="nav-link text-gray-400" href="/channel"><i class="fas fa-comments"></i>
                                 Channels</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-gray-400" href="/calendars"><i class="far fa-calendar-alt"></i>
-                                Calendars</a>
-                        </li>
+
                     </ul>
 
                 </div>
