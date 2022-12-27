@@ -19,7 +19,7 @@
     <div class="accordion" id="accordionExample">
 
         @php $i=0; @endphp
-        @foreach ($data as $resource)
+        @foreach ($data['resources']['data'] as $resource)
         @php $i++;@endphp
         <div class="accordion-item">
             <h2 class="accordion-header" id="heading{{ $i }}">
@@ -31,6 +31,12 @@
             </h2>
             <div id="collapse{{ $i }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $i }}" data-bs-parent="#accordionExample">
                 <div class="accordion-body bg-gray-400 text-gray-500">
+                    <form method="POST" action="/channel/{{ urlencode($data['channelID']) }}/thirdpartyresources/{{ urlencode($resource['id']) }}/delete">
+                        @csrf
+                        <div class="input-group mb-3">
+                            <button class="btn btn-danger" type="submit"><i class="fas fa-trash"></i> Delete</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

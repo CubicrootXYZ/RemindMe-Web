@@ -16,8 +16,8 @@ class ThirdPartyResourceController extends Controller
     public function show(Request $request, int $channelID)
     {
         $api = new RemindMeApi($request->get('username'), $request->get('password'));
-        $channels = $api->ThirdPartyResourcesGet($channelID);
+        $resources = $api->ThirdPartyResourcesGet($channelID);
 
-        return view('thirdpartyresources.show')->with($channels);
+        return view('thirdpartyresources.show')->with('data', ['resources' => $resources, 'channelID' => $channelID]);
     }
 }
