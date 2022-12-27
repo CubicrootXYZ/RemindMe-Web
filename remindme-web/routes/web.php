@@ -5,6 +5,7 @@ use App\Http\Controllers\LegalController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChannelController;
+use App\Http\Controllers\ThirdPartyResourceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,9 @@ Route::post('/user/{id}', [UserController::class, 'changeUser'])->middleware('au
 // Channels
 Route::get('/channel', [ChannelController::class, 'list'])->middleware('auth.basic.remindme');
 Route::post('/channel/{id}/delete', [ChannelController::class, 'delete'])->middleware('auth.basic.remindme');
+
+// Third party resources
+Route::get('/channel/{id}/thirdpartyresources', [ThirdPartyResourceController::class, 'show'])->middleware('auth.basic.remindme');
 
 // Calendars
 Route::post('/calendar/{id}/patch', [CalendarController::class, 'patch'])->middleware('auth.basic.remindme');

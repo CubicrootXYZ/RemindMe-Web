@@ -63,7 +63,9 @@
                         </div>
                     </form>
 
-
+                    <p>
+                        <a class="btn btn-primary" href="/channel/{{ urlencode($channel['id']) }}/thirdpartyresources"><i class="fas fa-chevron-right"></i> 3rd Party Resources</a>
+                    </p>
 
                 </div>
             </div>
