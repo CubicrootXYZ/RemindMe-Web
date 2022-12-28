@@ -36,6 +36,8 @@ Route::post('/channel/{id}/delete', [ChannelController::class, 'delete'])->middl
 
 // Third party resources
 Route::get('/channel/{id}/thirdpartyresources', [ThirdPartyResourceController::class, 'show'])->middleware('auth.basic.remindme');
+Route::post('/channel/{id}/thirdpartyresources/{id2}/delete', [ThirdPartyResourceController::class, 'delete'])->middleware('auth.basic.remindme');
+Route::post('/channel/{id}/thirdpartyresources/add', [ThirdPartyResourceController::class, 'add'])->middleware('auth.basic.remindme');
 
 // Calendars
 Route::post('/calendar/{id}/patch', [CalendarController::class, 'patch'])->middleware('auth.basic.remindme');

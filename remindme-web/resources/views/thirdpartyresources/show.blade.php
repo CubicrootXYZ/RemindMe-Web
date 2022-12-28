@@ -1,7 +1,7 @@
 @include('elements.header', ['title' => 'Users'])
 @include('elements.menu')
 
-@include('elements.visual.title', ['title' => 'Channels', 'icon' => 'fas fa-comments'])
+@include('elements.visual.title', ['title' => 'Thirdparty Resources', 'icon' => 'fas fa-download'])
 
 
 
@@ -15,8 +15,29 @@
 </script>
 
 <div class="container-fluid mt-4">
+    <p>
+        <a href="/channel" class="btn btn-primary"><i class="fas fa-chevron-left"></i> Channels</a>
+    </p>
+
+    <div class="card bg-gray-400 m-1">
+        <div class="card-body row justify-content-space-between align-items-center">
+            <form method="POST" action="/channel/{{ urlencode($data['channelID']) }}/thirdpartyresources/add">
+                @csrf
+                <input type="hidden" id="type" name="type" value="ical">
+                <div class="input-group mb-3 col-md-6">
+                    <input type="text" id="url" name="url" class="form-control" placeholder="iCal URL">
+                </div>
+                <div class="input-group mb-3">
+                    <button class="btn btn-success" type="submit"><i class="fas fa-plus"></i> Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <div class="accordion" id="accordionExample">
+        @if (empty($data['resources']['data']))
+            No thirdparty resources in this channel
+        @endif
 
         @php $i=0; @endphp
         @foreach ($data['resources']['data'] as $resource)

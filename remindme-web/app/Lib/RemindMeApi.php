@@ -77,6 +77,14 @@ class RemindMeApi
         return $data;
     }
 
+    public function ThirdPartyResourcesAdd(int $channelID, string $type, string $url): array
+    {
+        $url = $this->baseUrl . '/channel/' . $channelID . 'thirdpartyresources';
+        $data = $this->sendRequest(CURLOPT_POST, $url);
+
+        return $data;
+    }
+
     // @param int $method a CURLOPT method or -1 for DELETE, -2 for PATCH
     private function sendRequest(int $method, string $url, array $data = []): array
     {
