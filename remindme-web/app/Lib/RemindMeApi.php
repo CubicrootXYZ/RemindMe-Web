@@ -79,8 +79,8 @@ class RemindMeApi
 
     public function ThirdPartyResourcesAdd(int $channelID, string $type, string $url): array
     {
-        $url = $this->baseUrl . '/channel/' . $channelID . 'thirdpartyresources';
-        $data = $this->sendRequest(CURLOPT_POST, $url);
+        $url = $this->baseUrl . '/channel/' . $channelID . '/thirdpartyresources';
+        $data = $this->sendRequest(CURLOPT_POST, $url, ['type' => $type, 'url' => $url]);
 
         return $data;
     }

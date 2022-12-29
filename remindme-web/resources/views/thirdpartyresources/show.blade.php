@@ -19,7 +19,7 @@
         <a href="/channel" class="btn btn-primary"><i class="fas fa-chevron-left"></i> Channels</a>
     </p>
 
-    <div class="card bg-gray-400 m-1">
+    <div class="card bg-gray-400 m-1 mb-4">
         <div class="card-body row justify-content-space-between align-items-center">
             <form method="POST" action="/channel/{{ urlencode($data['channelID']) }}/thirdpartyresources/add">
                 @csrf
